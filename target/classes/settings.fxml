@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.najah.ai.tictactoe.gui.SettingsController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+    
+    <Label text="Game Settings" textFill="#2c3e50">
+        <font>
+            <Font name="System Bold" size="36.0"/>
+        </font>
+    </Label>
+    
+    <VBox spacing="20.0" alignment="CENTER_LEFT" prefWidth="400.0">
+        <padding>
+            <Insets top="20.0"/>
+        </padding>
+        
+        <!-- Player Symbol Selection -->
+        <VBox spacing="10.0">
+            <Label text="Choose Your Symbol:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="15.0">
+                <RadioButton fx:id="playerXRadio" text="X" style="-fx-font-size: 14px;" selected="true">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="playerGroup"/>
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="playerORadio" text="O" style="-fx-font-size: 14px;" toggleGroup="$playerGroup"/>
+            </HBox>
+        </VBox>
+        
+        <!-- Difficulty Selection -->
+        <VBox spacing="10.0">
+            <Label text="Difficulty Level:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <ComboBox fx:id="difficultyCombo" prefWidth="200.0" style="-fx-font-size: 14px;"/>
+        </VBox>
+        
+        <!-- Evaluation Function Selection -->
+        <VBox spacing="10.0">
+            <Label text="Evaluation Function:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <ComboBox fx:id="evaluationCombo" prefWidth="200.0" style="-fx-font-size: 14px;"/>
+        </VBox>
+        
+        <!-- Debug Mode Toggle -->
+        <VBox spacing="10.0">
+            <Label text="Debug Mode:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <CheckBox fx:id="debugModeCheck" text="Show AI evaluation scores" style="-fx-font-size: 14px;"/>
+        </VBox>
+    </VBox>
+    
+    <HBox spacing="20.0" alignment="CENTER">
+        <padding>
+            <Insets top="20.0"/>
+        </padding>
+        <Button text="Back to Menu" prefWidth="150.0" prefHeight="40.0" onAction="#handleBack" style="-fx-font-size: 14px; -fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 8;"/>
+        <Button text="Save Settings" prefWidth="150.0" prefHeight="40.0" onAction="#handleSave" style="-fx-font-size: 14px; -fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 8;"/>
+    </HBox>
+</VBox>
